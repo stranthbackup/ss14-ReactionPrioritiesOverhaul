@@ -9,6 +9,7 @@ using Content.Shared.Database;
 using Content.Shared.FixedPoint;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Store;
+using Content.Shared.Store.Events;
 using Robust.Server.GameObjects;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Player;
@@ -155,18 +156,23 @@ public sealed partial class StoreSystem
             component.Balance[currency.Key] -= currency.Value;
         }
 
+        var ev = new StorePurchasedListingEvent() { Purchaser = buyer, Listing = listing };
+
         //spawn entity
         if (listing.ProductEntity != null)
         {
             var product = Spawn(listing.ProductEntity, Transform(buyer).Coordinates);
             _hands.PickupOrDrop(buyer, product);
+            ev.Item = product;
         }
 
         //give action
         if (!string.IsNullOrWhiteSpace(listing.ProductAction))
         {
             // I guess we just allow duplicate actions?
-            _actions.AddAction(buyer, listing.ProductAction);
+            var actionUid = _actions.AddAction(buyer, listing.ProductAction);
+
+            ev.Action = actionUid;
         }
 
         //broadcast event
@@ -174,6 +180,9 @@ public sealed partial class StoreSystem
         {
             RaiseLocalEvent(listing.ProductEvent);
         }
+
+        RaiseLocalEvent(uid, ev);
+        RaiseLocalEvent(buyer, ev);
 
         //log dat shit.
         _admin.Add(LogType.StorePurchase, LogImpact.Low,

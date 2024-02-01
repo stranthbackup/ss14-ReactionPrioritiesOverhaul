@@ -68,3 +68,11 @@
   id: RevenantAbilities
   name: store-category-abilities
 
+#vampire
+- type: storeCategory
+  id: VampirePowers
+  name: store-category-vampirepowers
+
+- type: storeCategory
+  id: VampirePassives
+  name: store-category-vampirepassives
