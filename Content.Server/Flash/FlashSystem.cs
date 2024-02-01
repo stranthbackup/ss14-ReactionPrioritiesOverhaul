@@ -62,17 +62,17 @@ namespace Content.Server.Flash
             args.Handled = true;
             foreach (var e in args.HitEntities)
             {
-                Flash(e, args.User, uid, comp.FlashDuration, comp.SlowTo, melee: true);
+                Flash(e, args.User, uid, comp.FlashDuration, comp.SlowTo, comp.StunTime, melee: true);
             }
         }
 
         private void OnFlashUseInHand(EntityUid uid, FlashComponent comp, UseInHandEvent args)
         {
-            if (args.Handled || !UseFlash(uid, comp, args.User))
+            if (args.Handled || !comp.AoeFlashDuration.HasValue || !UseFlash(uid, comp, args.User))
                 return;
 
             args.Handled = true;
-            FlashArea(uid, args.User, comp.Range, comp.AoeFlashDuration, comp.SlowTo, true);
+            FlashArea(uid, args.User, comp.Range, comp.AoeFlashDuration.Value, comp.SlowTo, true);
         }
 
         private bool UseFlash(EntityUid uid, FlashComponent comp, EntityUid user)
@@ -110,6 +110,7 @@ namespace Content.Server.Flash
             EntityUid? used,
             float flashDuration,
             float slowTo,
+            float? stunTime,
             bool displayPopup = true,
             FlashableComponent? flashable = null,
             bool melee = false)
@@ -138,6 +139,11 @@ namespace Content.Server.Flash
 
             _stun.TrySlowdown(target, TimeSpan.FromSeconds(flashDuration/1000f), true,
                 slowTo, slowTo);
+
+            if (stunTime != null)
+            {
+                _stun.TryParalyze(target, TimeSpan.FromSeconds(stunTime.Value/1000f), true);
+            }
 
             if (displayPopup && user != null && target != user && Exists(user.Value))
             {
@@ -169,7 +175,7 @@ namespace Content.Server.Flash
                     continue;
 
                 // They shouldn't have flash removed in between right?
-                Flash(entity, user, source, duration, slowTo, displayPopup, flashableQuery.GetComponent(entity));
+                Flash(entity, user, source, duration, slowTo, null, displayPopup, flashableQuery.GetComponent(entity));
             }
             if (sound != null)
             {
