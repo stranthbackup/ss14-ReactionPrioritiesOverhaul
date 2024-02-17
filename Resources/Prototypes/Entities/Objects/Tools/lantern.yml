@@ -37,7 +37,7 @@
       heldPrefix: off
     - type: PointLight
       enabled: false
-      radius: 3
+      radius: 2.5
       energy: 2.5
       color: "#FFC458"
       netsync: false

@@ -22,8 +22,8 @@
     startingCharge: 0
   - type: ExaminableBattery
   - type: PointLight
-    radius: 1.5
-    energy: 1.6
+    radius: 0.9
+    energy: 0.6
     color: "#3db83b"
     castShadows: false
   - type: NodeContainer
@@ -128,8 +128,8 @@
     sound:
       path: /Audio/Ambience/Objects/buzzing.ogg
   - type: PointLight
-    radius: 1.5
-    energy: 1.6
+    radius: 0.9
+    energy: 0.6
     color: "#3db83b"
     netsync: false
     castShadows: false

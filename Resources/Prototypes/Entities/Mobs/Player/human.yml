@@ -3,6 +3,12 @@
   name: Urist McHands
   parent: BaseMobHuman
   id: MobHuman
+  components:
+  - type: EyeTraits
+    autoExpose: # Human night vision
+      max: 8
+    nightVision:
+      color: "#E0FFC0FF"
 
 #Syndie
 - type: entity

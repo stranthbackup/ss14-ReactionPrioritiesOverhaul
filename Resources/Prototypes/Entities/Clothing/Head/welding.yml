@@ -8,6 +8,7 @@
   - type: FlashImmunity
   - type: IdentityBlocker
   - type: EyeProtection
+    reduction: 3
   - type: PhysicalComposition
     materialComposition:
       Steel: 500

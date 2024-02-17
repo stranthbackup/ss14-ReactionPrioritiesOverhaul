@@ -3,3 +3,7 @@
   name: Vox
   parent: BaseMobVox
   id: MobVox
+  components:
+    - type: EyeTraits
+      autoExpose: # Human night vision
+        max: 8

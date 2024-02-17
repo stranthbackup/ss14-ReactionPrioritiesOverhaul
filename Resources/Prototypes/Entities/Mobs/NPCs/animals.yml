@@ -2119,6 +2119,19 @@
       path: /Audio/Animals/snake_hiss.ogg
   - type: NoSlip
   - type: Spider
+  - type: Eye
+  - type: EyeTraits
+    autoExpose: # Spider vision
+      max: 12
+      min: 1.2
+      rampUp: 0.05
+      rampUpNight: 0.01
+    nightVision:
+      lightIntolerance: 0.7 # More disrupted by bright light
+      color: "#FFB0B0FF"
+      minExposure: 0.9
+      range: 0.3
+      power: 1.5
   - type: IgnoreSpiderWeb
   - type: Bloodstream
     bloodMaxVolume: 150
@@ -2269,6 +2282,16 @@
     spawned:
     - id: FoodMeat
       amount: 3
+  - type: Eye
+  - type: EyeTraits
+    autoExpose: # Animal Night vision
+      max: 10
+      min: 1.2
+      rampUp: 0.05
+      rampUpNight: 0.01
+    nightVision:
+      range: 0.5
+      power: 0.4
   - type: InteractionPopup
     successChance: 0.2 # Low when undomesticated.
     interactSuccessString: petting-success-possum # Possums don't really make much noise when they're happy. They make clicking noises as a mating call, but that is NOT the same thing!
@@ -2354,6 +2377,17 @@
   - type: Grammar
     attributes:
       gender: epicene
+  - type: Eye
+  - type: EyeTraits
+    autoExpose: # Animal Night vision
+      max: 10
+      min: 1.2
+      rampUp: 0.05
+      rampUpNight: 0.01
+    nightVision:
+      color: "#E0FFC0FF"
+      range: 0.5
+      power: 0.4
   - type: Tag
     tags:
     - VimPilot
@@ -2420,9 +2454,14 @@
       gender: epicene
   - type: Bloodstream
     bloodMaxVolume: 100
-  - type: Tag
-    tags:
-    - VimPilot
+  - type: EyeTraits
+    autoExpose: # Animal Night vision
+      min: 1.2
+      rampUp: 0.05
+      rampUpNight: 0.01
+      color: "#E0FFC0FF"
+      range: 0.5
+      power: 0.4
 
 - type: entity
   name: corgi
@@ -2484,9 +2523,14 @@
     flavorKind: station-event-random-sentience-flavor-corgi
   - type: MobPrice
     price: 200
-  - type: Tag
-    tags:
-    - VimPilot
+  - type: EyeTraits
+    autoExpose: # Animal Night vision
+      min: 1.2
+      rampUp: 0.05
+      rampUpNight: 0.01
+      color: "#E0FFC0FF"
+      range: 0.5
+      power: 0.4
 
 - type: entity
   name: corrupted corgi
@@ -2639,9 +2683,18 @@
       gender: epicene
   - type: MobPrice
     price: 200
-  - type: Tag
-    tags:
-    - VimPilot
+  - type: EyeTraits
+    autoExpose: # Powerful animal Night vision
+      min: 0.8
+      rampDown: 0.2
+      rampNight: 1.0
+      rampUp: 0.05
+      rampUpNight: 0.01
+      color: "#E7FFE0FF"
+      lightIntolerance: 0.2
+      minExposure: 0.9
+      range: 0.6
+      power: 0.3
 
 - type: entity
   name: calico cat

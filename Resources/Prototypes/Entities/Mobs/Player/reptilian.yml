@@ -3,5 +3,11 @@
   name: Urisst' Mzhand
   parent: BaseMobReptilian
   id: MobReptilian
+  components:
+    - type: EyeTraits
+      autoExpose: # Human night vision
+        max: 8
+      nightVision:
+        color: "#B0D0FFFF"
 
 #Weh
