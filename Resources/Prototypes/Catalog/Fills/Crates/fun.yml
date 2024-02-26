@@ -28,6 +28,8 @@
       - id: PlushieMoth
       - id: PlushieArachind
       - id: PlushiePenguin
+      - id: PlushieScientist
+      - id: PlushieRobotics
 
 - type: entity
   id: CrateFunLizardPlushieBulk
@@ -38,9 +40,13 @@
   - type: StorageFill
     contents:
       - id: PlushieLizard
-        amount: 3
-      - id: PlushieSpaceLizard
         amount: 2
+      - id: PlushieSpaceLizard
+        amount: 1
+      - id: PlushieScientist
+        amount: 1
+      - id: PlushieRobotics
+        amount: 1
 
 - type: entity
   id: CrateFunInstrumentsVariety
