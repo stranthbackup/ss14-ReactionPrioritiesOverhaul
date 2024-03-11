@@ -750,6 +750,21 @@
         components:
           - SurplusBundle
 
+- type: listing
+  id: UplinkEmergencyChemicalImplanter
+  name: uplink-emergency-implanter-name
+  description: uplink-emergency-implanter-desc
+  productEntity: EmergencyChemicalImplanter
+  cost:
+    Telecrystal: 5
+  categories:
+  - UplinkImplants
+  conditions:
+  - !type:BuyerWhitelistCondition
+    blacklist:
+      components:
+      - SurplusBundle
+
 # Bundles
 
 - type: listing
