@@ -43,6 +43,20 @@ public sealed partial class GravityWellComponent : Component
     [ViewVariables(VVAccess.ReadWrite)]
     public float BaseTangentialAcceleration = 0.0f;
 
+    /// <summary>
+    /// Whether to also apply Newton's third law.
+    /// </summary>
+    [DataField]
+    [ViewVariables(VVAccess.ReadWrite)]
+    public bool ApplyCounterforce = false;
+
+    /// <summary>
+    /// If <see cref="ApplyCounterforce"/> is true, how much to pull self to static objects. Does not pull static objects if null.
+    /// </summary>
+    [DataField]
+    [ViewVariables(VVAccess.ReadWrite)]
+    public float? StaticAttraction = null;
+
     #region Update Timing
 
     /// <summary>
