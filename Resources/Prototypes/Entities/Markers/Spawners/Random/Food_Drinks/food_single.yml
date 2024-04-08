@@ -30,9 +30,11 @@
       - FoodBurgerChicken
       - FoodBurgerDuck
       - FoodBurgerCheese
+      - FoodBurgerSlime
       - FoodMeatHawaiianKebab
       - FoodMeatKebab
       - FoodMeatFiestaKebab
+      - FoodMeatAnticucho
       - FoodNoodlesBoiled
       - FoodNoodles
       - FoodNoodlesCopy
@@ -54,6 +56,7 @@
       - FoodTacoFish
       - FoodTacoBeefSupreme
       - FoodTacoChickenSupreme
+      - FoodMealHaggisSlice
     chance: 0.8
     offset: 0.0
     #rare
@@ -70,6 +73,7 @@
       - FoodBurgerSpell
       - FoodBurgerSuper
       - FoodBurgerCrazy
+      - FoodBurgerSkub
       - FoodMeatHumanKebab
       - FoodMeatLizardtailKebab
       - FoodMeatRatKebab

@@ -1225,3 +1225,83 @@
     - Fruit
     - Soup
 # Tastes like bungo, hot curry.
+
+- type: entity
+  name: bone broth
+  parent: FoodBowlBase
+  id: FoodSoupBone
+  description: The ghost of a proper soup. Not very filling, but full of vitamins.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - savory
+      - vitamin
+  - type: Sprite
+    sprite: Objects/Consumable/Food/bowl.rsi
+    layers:
+    - state: bowl
+    - state: bonebroth
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 15
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 1 # Everybody gets one.
+        - ReagentId: Vitamin
+          Quantity: 14
+
+- type: entity
+  name: sour lung
+  parent: FoodBowlBase
+  id: FoodSoupSourLung
+  description: Thinly sliced lung, smothered in vinegar before adding cream, which is turned sour. Not quite as disgusting as it sounds.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - meaty
+      - sour
+  - type: Sprite
+    layers:
+    - state: bowl
+    - state: sourlung
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 15
+        reagents:
+          - ReagentId: Nutriment
+            Quantity: 4
+          - ReagentId: Protein
+            Quantity: 4
+          - ReagentId: Vitamin
+            Quantity: 7
+  - type: Tag
+    tags:
+    - Meat
+    - Soup
+
+- type: entity
+  name: menudo
+  parent: FoodBowlBase
+  id: FoodSoupMenudo
+  description: A traditional Mexican soup, made from tripe. Often touted as a hangover cure.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - spicy
+  - type: Sprite
+    layers:
+    - state: bowl
+    - state: menudo
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+          - ReagentId: Nutriment
+            Quantity: 5
+          - ReagentId: Vitamin
+            Quantity: 10
+          - ReagentId: CapsaicinOil
+            Quantity: 5

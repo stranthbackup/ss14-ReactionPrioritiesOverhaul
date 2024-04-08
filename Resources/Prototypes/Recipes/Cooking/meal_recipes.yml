@@ -322,6 +322,25 @@
     FoodBreadBun: 1
     MobMothroach: 1
 
+- type: microwaveMealRecipe
+  id: RecipeSlimeBurger
+  name: slime burger recipe
+  result: FoodBurgerSlime
+  time: 10
+  solids:
+    FoodBreadBun: 1
+    FoodMeatSlime: 1
+
+- type: microwaveMealRecipe
+  id: RecipeSkubBurger
+  name: skuburger recipe
+  result: FoodBurgerSkub
+  time: 10
+  solids:
+    FoodBreadBun: 1
+    Skub: 1
+
+
 #Breads & Sandwiches
 
 - type: microwaveMealRecipe
@@ -602,6 +621,15 @@
   solids:
     FoodNoodlesBoiled: 1
     FoodMeatMeatball: 2
+
+- type: microwaveMealRecipe
+  id: RecipeSlimeballSpaghetti
+  name: spaghetti & slimeballs recipe
+  result: FoodNoodlesSlimeball
+  time: 10
+  solids:
+    FoodNoodlesBoiled: 1
+    FoodMeatSlime: 2
 
 - type: microwaveMealRecipe
   id: RecipeButterNoodles
@@ -896,6 +924,43 @@
     FoodBungo: 2
     FoodChili: 1
 
+- type: microwaveMealRecipe
+  id: RecipeBoneSoup
+  name: bone broth recipe
+  result: FoodSoupBone
+  time: 10
+  reagents:
+    Water: 10
+    Vinegar: 5
+  solids:
+    FoodBowlBig: 1
+    MaterialBones1: 1
+
+- type: microwaveMealRecipe
+  id: RecipeSourLung
+  name: sour lung recipe
+  result: FoodSoupSourLung
+  time: 10
+  reagents:
+    Cream: 5
+    Vinegar: 5
+  solids:
+    FoodBowlBig: 1
+    FoodLungs: 1
+
+- type: microwaveMealRecipe
+  id: RecipeMenudo
+  name: menudo recipe
+  result: FoodSoupMenudo
+  time: 10
+  solids:
+    FoodBowlBig: 1
+    FoodStomach: 1
+    FoodCorn: 1
+    FoodChili: 1
+  reagents:
+    JuiceLime: 5
+
 #Pies
 
 - type: microwaveMealRecipe
@@ -997,6 +1062,31 @@
     FoodDoughPie: 1
     FoodMeatXeno: 3
     FoodPlateTin: 1
+
+# Two recipes for peach cobbler: one with tinned peaches and the other with maintenance peaches.
+- type: microwaveMealRecipe
+  id: RecipePeachCobbler
+  name: peach cobbler recipe
+  result: FoodPiePeach
+  time: 15
+  solids:
+    FoodDoughPie: 1
+    FoodTinPeaches: 1
+    FoodPlateTin: 1
+  reagents:
+    IceCream: 10
+
+- type: microwaveMealRecipe
+  id: RecipeMaintPeachCobbler
+  name: peach cobbler recipe
+  result: FoodPiePeach
+  time: 15
+  solids:
+    FoodDoughPie: 1
+    FoodTinPeachesMaint: 1
+    FoodPlateTin: 1
+  reagents:
+    IceCream: 10
 
 #Tarts
 
@@ -1133,6 +1223,54 @@
   time: 20
   solids:
     FoodCorn: 1
+
+- type: microwaveMealRecipe
+  id: RecipeBlackPudding
+  name: black pudding recipe
+  result: FoodMeatBlackPudding
+  time: 15
+  reagents:
+    Blood: 15
+    Fat: 5
+    Oats: 5
+
+- type: microwaveMealRecipe
+  id: RecipeDevilledKidneys
+  name: devilled kidneys recipe
+  result: FoodMealDevilledKidneys
+  time: 15
+  reagents:
+    TableSalt: 5
+    Blackpepper: 5
+  solids:
+    FoodKidneys: 1
+    FoodChili: 1
+
+- type: microwaveMealRecipe
+  id: RecipeHaggis
+  name: haggis recipe
+  result: FoodMealHaggis
+  time: 30
+  reagents:
+    TableSalt: 15
+    Blackpepper: 5
+    Oats: 15
+  solids:
+    FoodHeart: 1
+    FoodLiver: 1
+    FoodLungs: 1
+    FoodOnion: 2
+
+- type: microwaveMealRecipe
+  id: RecipeLiverAndOnions
+  name: liver and onions recipe
+  result: FoodMealLiverAndOnions
+  time: 15
+  solids:
+    FoodLiver: 1
+    FoodButter: 1
+    FoodOnion: 1
+
 
 - type: microwaveMealRecipe
   id: RecipePancake
@@ -1371,6 +1509,16 @@
   time: 5
   reagents:
     Slime: 15
+  solids:
+    FoodCakePlain: 1
+
+- type: microwaveMealRecipe
+  id: RecipeLemonLimeCake
+  name: lemon-lime soda cake recipe
+  result: FoodCakeLemonLime
+  time: 5
+  reagents:
+    LemonLime: 10
   solids:
     FoodCakePlain: 1
 
@@ -1802,6 +1950,15 @@
     Wine: 5
   solids:
     FoodMeatSnake: 1
+    FoodKebabSkewer: 1
+
+- type: microwaveMealRecipe
+  id: RecipeAnticucho
+  name: anticucho recipe
+  result: FoodMeatAnticucho
+  time: 5
+  solids:
+    FoodHeart: 1
     FoodKebabSkewer: 1
 
 - type: microwaveMealRecipe

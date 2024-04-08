@@ -37,6 +37,7 @@
       - FoodCakeChristmas
       - FoodCakeBirthday
       - FoodCakeVanilla
+      - FoodCakeLemonLime
       - FoodPieApple
       - FoodPieBaklava
       - FoodPieBananaCream
@@ -44,6 +45,7 @@
       - FoodPieCherry
       - FoodPieMeat
       - FoodPieFrosty
+      - FoodPiePeach
       - FoodBakedBrownieBatch
     chance: 0.8
     offset: 0.0

@@ -67,7 +67,7 @@
   - type: FlavorProfile
     flavors:
       - people
-  
+
 - type: entity
   id: OrganHumanEyes
   parent: BaseHumanOrgan
@@ -141,6 +141,11 @@
         reagents:
         - ReagentId: UncookedAnimalProteins
           Quantity: 5
+  - type: Butcherable
+    butcheringType: Knife
+    spawned:
+    - id: FoodLungs
+      amount: 1
 
 - type: entity
   id: OrganHumanHeart
@@ -160,6 +165,11 @@
     - id: Medicine
     - id: Poison
     - id: Narcotic
+  - type: Butcherable
+    butcheringType: Knife
+    spawned:
+    - id: FoodHeart
+      amount: 1
 
 - type: entity
   id: OrganHumanStomach
@@ -189,6 +199,11 @@
     groups:
     - id: Food
     - id: Drink
+  - type: Butcherable
+    butcheringType: Knife
+    spawned:
+    - id: FoodStomach
+      amount: 1
 
 - type: entity
   id: OrganHumanLiver
@@ -204,6 +219,11 @@
     groups:
     - id: Alcohol
       rateModifier: 0.1 # removes alcohol very slowly along with the stomach removing it as a drink
+  - type: Butcherable
+    butcheringType: Knife
+    spawned:
+    - id: FoodLiver
+      amount: 1
 
 - type: entity
   id: OrganHumanKidneys
@@ -220,3 +240,8 @@
     maxReagents: 5
     metabolizerTypes: [Human]
     removeEmpty: true
+  - type: Butcherable
+    butcheringType: Knife
+    spawned:
+    - id: FoodKidneys
+      amount: 1
