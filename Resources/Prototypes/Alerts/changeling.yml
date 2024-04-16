@@ -1,0 +1,22 @@
+- type: alert
+  id: Chemicals
+  icons:
+  - sprite: /Textures/Interface/Alerts/chemicals_counter.rsi
+    state: chemicals
+  name: alerts-changeling-chemicals-name
+  description: alerts-changeling-chemicals-desc
+  alertViewEntity: AlertChemicalsSpriteView
+
+- type: entity
+  id: AlertChemicalsSpriteView
+  categories: [ hideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: /Textures/Interface/Alerts/chemicals_counter.rsi
+    layers:
+    - map: [ "enum.AlertVisualLayers.Base" ]
+    - map: [ "enum.ChangelingVisualLayers.Digit1" ]
+    - map: [ "enum.ChangelingVisualLayers.Digit2" ]
+      offset: 0.125, 0
+    - map: [ "enum.ChangelingVisualLayers.Digit3" ]
+      offset: 0.25, 0

@@ -228,7 +228,7 @@ public sealed partial class PolymorphSystem : EntitySystem
             _inventory.TransferEntityInventories(uid, child);
             foreach (var hand in _hands.EnumerateHeld(uid))
             {
-                _hands.TryDrop(uid, hand, checkActionBlocker: false);
+                _hands.TryDrop(uid, hand, checkActionBlocker: false, forced: true);
                 _hands.TryPickupAnyHand(child, hand);
             }
         }
@@ -304,7 +304,7 @@ public sealed partial class PolymorphSystem : EntitySystem
             _inventory.TransferEntityInventories(uid, parent);
             foreach (var held in _hands.EnumerateHeld(uid))
             {
-                _hands.TryDrop(uid, held);
+                _hands.TryDrop(uid, held, forced: true);
                 _hands.TryPickupAnyHand(parent, held, checkActionBlocker: false);
             }
         }
@@ -333,10 +333,12 @@ public sealed partial class PolymorphSystem : EntitySystem
         // if an item polymorph was picked up, put it back down after reverting
         _transform.AttachToGridOrMap(parent, parentXform);
 
-        _popup.PopupEntity(Loc.GetString("polymorph-revert-popup-generic",
-                ("parent", Identity.Entity(uid, EntityManager)),
-                ("child", Identity.Entity(parent, EntityManager))),
-            parent);
+        if (component.Configuration.ShowRevertPopup)
+            _popup.PopupEntity(Loc.GetString("polymorph-revert-popup-generic",
+                    ("parent", Identity.Entity(uid, EntityManager)),
+                    ("child", Identity.Entity(parent, EntityManager))),
+                parent);
+
         QueueDel(uid);
 
         return parent;
