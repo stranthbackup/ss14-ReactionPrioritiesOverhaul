@@ -23,7 +23,7 @@ namespace Content.Server.Chemistry.ReagentEffects
         {
             var uid = args.SolutionEntity;
             if (args.EntityManager.TryGetComponent(uid, out ThirstComponent? thirst))
-                EntitySystem.Get<ThirstSystem>().ModifyThirst(uid, thirst, HydrationFactor);
+                EntitySystem.Get<ThirstSystem>().ModifyThirst(uid, HydrationFactor, thirst);
         }
 
         protected override string? ReagentEffectGuidebookText(IPrototypeManager prototype, IEntitySystemManager entSys)
