@@ -54,12 +54,7 @@ public abstract class BaseBulletRenderer : Control
         // Scale rendering in this control by UIScale.
         var currentTransform = handle.GetTransform();
 
-        {
-            Matrix3.MultiplyBackwards(Matrix3.CreateScale(new Vector2(UIScale)), currentTransform, out var ht);
-            handle.SetTransform(ht);
-        }
-        //<todo.eoin Restore this. Original:
-        //handle.SetTransform(Matrix3.CreateScale(new Vector2(UIScale)) * currentTransform);
+        handle.SetTransform(currentTransform * Matrix3.CreateScale(new Vector2(UIScale)));
 
         var countPerRow = CountPerRow(Size.X);
 

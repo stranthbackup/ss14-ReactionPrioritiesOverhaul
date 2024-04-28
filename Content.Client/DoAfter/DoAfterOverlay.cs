@@ -92,8 +92,8 @@ public sealed class DoAfterOverlay : Overlay
                 : curTime;
 
             var worldMatrix = Matrix3.CreateTranslation(worldPosition);
-            Matrix3.MultiplyBackwards(scaleMatrix, worldMatrix, out var scaledWorld);
-            Matrix3.MultiplyBackwards(rotationMatrix, scaledWorld, out var matty);
+            Matrix3.Multiply(worldMatrix, scaleMatrix, out var scaledWorld);
+            Matrix3.Multiply(scaledWorld, rotationMatrix, out var matty);
             handle.SetTransform(matty);
 
             var offset = 0f;
