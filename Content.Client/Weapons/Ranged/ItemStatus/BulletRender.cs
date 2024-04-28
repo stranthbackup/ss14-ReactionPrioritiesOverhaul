@@ -53,7 +53,6 @@ public abstract class BaseBulletRenderer : Control
     {
         // Scale rendering in this control by UIScale.
         var currentTransform = handle.GetTransform();
-
         handle.SetTransform(currentTransform * Matrix3.CreateScale(new Vector2(UIScale)));
 
         var countPerRow = CountPerRow(Size.X);
