@@ -317,7 +317,10 @@ namespace Content.Client.Viewport
         public Matrix3 GetWorldToScreenMatrix()
         {
             EnsureViewportCreated();
-            return _viewport!.GetWorldToLocalMatrix() * GetLocalToScreenMatrix();
+            Matrix3.MultiplyBackwards(_viewport!.GetWorldToLocalMatrix(), GetLocalToScreenMatrix(), out var ret);
+            return ret;
+            //<todo.eoin Restore this. Original:
+            //return _viewport!.GetWorldToLocalMatrix() * GetLocalToScreenMatrix();
         }
 
         public Matrix3 GetLocalToScreenMatrix()
