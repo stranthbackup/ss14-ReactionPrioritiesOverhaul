@@ -24,4 +24,6 @@ public sealed class AntagSelectionPlayerPool (List<List<ICommonSession>> ordered
     }
 
     public int Count => orderedPools.Sum(p => p.Count);
+
+    internal List<ICommonSession> PrimaryList => orderedPools[0];
 }
