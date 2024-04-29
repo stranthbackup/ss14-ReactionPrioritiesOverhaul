@@ -1,5 +1,6 @@
 using System.Linq;
 using Content.Shared.Actions;
+using Content.Shared.Actions.Components;
 using Content.Shared.CombatMode;
 using Robust.Server.Player;
 using Robust.Shared.GameObjects;
@@ -47,9 +48,9 @@ public sealed class ActionsAddedTest
         var evType = typeof(ToggleCombatActionEvent);
 
         var sActions = sActionSystem.GetActions(serverEnt).Where(
-            x => x.Comp is InstantActionComponent act && act.Event?.GetType() == evType).ToArray();
+            ent => sEntMan.GetComponentOrNull<InstantActionComponent>(ent)?.Event?.GetType() == evType).ToArray();
         var cActions = cActionSystem.GetActions(clientEnt).Where(
-            x => x.Comp is InstantActionComponent act && act.Event?.GetType() == evType).ToArray();
+            ent => cEntMan.GetComponentOrNull<InstantActionComponent>(ent)?.Event?.GetType() == evType).ToArray();
 
         Assert.That(sActions.Length, Is.EqualTo(1));
         Assert.That(cActions.Length, Is.EqualTo(1));
