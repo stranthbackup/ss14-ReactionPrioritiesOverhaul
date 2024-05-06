@@ -26,6 +26,8 @@ public sealed partial class BlindableComponent : Component
 
     public const int MaxDamage = 9;
 
+    public int MinDamage = 0;
+
     /// <description>
     /// Used to ensure that this doesn't break with sandbox or admin tools.
     /// This is not "enabled/disabled".
