@@ -9,6 +9,9 @@ using Robust.Server.GameObjects;
 using Robust.Shared.Containers;
 using Robust.Shared.Map;
 using Robust.Shared.Player;
+using Content.Shared.PDA;
+using Content.Server.CartridgeLoader.Cartridges;
+using Content.Shared.Access.Components;
 
 namespace Content.Server.CartridgeLoader;
 
@@ -29,6 +32,7 @@ public sealed class CartridgeLoaderSystem : SharedCartridgeLoaderSystem
         SubscribeLocalEvent<CartridgeLoaderComponent, CartridgeLoaderUiMessage>(OnLoaderUiMessage);
         SubscribeLocalEvent<CartridgeLoaderComponent, CartridgeUiMessage>(OnUiMessage);
     }
+
 
     public IReadOnlyList<EntityUid> GetInstalled(EntityUid uid, ContainerManagerComponent? comp = null)
     {
