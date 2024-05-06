@@ -1,4 +1,5 @@
 using Content.Shared.Physics;
+using Content.Shared.Radio;
 using Content.Shared.Tag;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
@@ -100,6 +101,7 @@ public sealed partial class ContainmentFieldGeneratorComponent : Component
     [ViewVariables(VVAccess.ReadWrite)]
     [DataField("createdField", customTypeSerializer: typeof(PrototypeIdSerializer<EntityPrototype>))]
     public string CreatedField = "ContainmentField";
+
 }
 
 [Serializable, NetSerializable]
