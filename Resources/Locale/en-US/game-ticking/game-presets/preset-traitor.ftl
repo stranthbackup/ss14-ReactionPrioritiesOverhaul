@@ -4,6 +4,7 @@ traitor-round-end-codewords = The codewords were: [color=White]{$codewords}[/col
 traitor-round-end-agent-name = traitor
 
 objective-issuer-syndicate = [color=crimson]The Syndicate[/color]
+objective-issuer-bloodbrothers = [color=red]Blood Brother[/color]
 
 # Shown at the end of a round of Traitor
 
@@ -41,3 +42,12 @@ traitor-role-codewords-short =
     The codewords are:
     {$codewords}.
 traitor-role-uplink-code-short = Your uplink code is {$code}. Set it as your PDA ringtone to access uplink.
+
+# BloodBrotherRole
+bloodbrother-role-greeting =
+    You are a blood brother.
+    Your objectives and codewords are listed in the character menu.
+    You have no uplink, but a brother in crime to help you do your objectives.
+    You will be able to recognise him out of the crowd very easily.
+    Your objectives are shared, therefore you must work together to complete this mission.
+    Death to Nanotrasen!
