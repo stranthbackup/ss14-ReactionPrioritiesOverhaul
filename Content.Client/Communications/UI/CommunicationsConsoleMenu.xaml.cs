@@ -39,7 +39,6 @@ namespace Content.Client.Communications.UI
                 {
                     AnnounceButton.Disabled = !owner.CanAnnounce;
                     AnnounceButton.ToolTip = null;
-
                 }
             };
 
