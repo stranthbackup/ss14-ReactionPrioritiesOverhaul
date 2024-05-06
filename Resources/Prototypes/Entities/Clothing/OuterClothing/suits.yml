@@ -54,6 +54,8 @@
     highPressureMultiplier: 0.04
   - type: TemperatureProtection
     coefficient: 0.005
+  - type: FireProtection
+    reduction: 0.65 # doesnt have a full seal so not as good
   - type: Armor
     modifiers:
       coefficients:
