@@ -107,7 +107,7 @@ public sealed partial class ExplosionSystem : EntitySystem
             var  (_, gridWorldRotation, gridWorldMatrix, invGridWorldMatrid) = xform.GetWorldPositionRotationMatrixWithInv(xforms);
 
             var localEpicentre = (Vector2i) invGridWorldMatrid.Transform(epicentre.Position);
-            var matrix = offsetMatrix * gridWorldMatrix * targetMatrix;
+            var matrix = targetMatrix * gridWorldMatrix * offsetMatrix;
             var angle = gridWorldRotation - targetAngle;
 
             var (x, y) = angle.RotateVec(new Vector2(tileSize / 4f, tileSize / 4f));

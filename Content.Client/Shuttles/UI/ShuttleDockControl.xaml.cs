@@ -109,7 +109,7 @@ public sealed partial class ShuttleDockControl : BaseShuttleControl
         var mapPos = _xformSystem.ToMapCoordinates(_coordinates.Value);
         var ourGridMatrix = _xformSystem.GetWorldMatrix(gridXform.Owner);
         var dockMatrix = Matrix3.CreateTransform(_coordinates.Value.Position, Angle.Zero);
-        Matrix3.Multiply(dockMatrix, ourGridMatrix, out var offsetMatrix);
+        Matrix3.Multiply(ourGridMatrix, dockMatrix, out var offsetMatrix);
 
         offsetMatrix = offsetMatrix.Invert();
 
@@ -137,7 +137,7 @@ public sealed partial class ShuttleDockControl : BaseShuttleControl
                 continue;
 
             var gridMatrix = _xformSystem.GetWorldMatrix(grid.Owner);
-            Matrix3.Multiply(in gridMatrix, in offsetMatrix, out var matty);
+            Matrix3.Multiply(in offsetMatrix, in gridMatrix, out var matty);
             var color = _shuttles.GetIFFColor(grid.Owner, grid.Owner == GridEntity, component: iffComp);
 
             DrawGrid(handle, matty, grid, color);

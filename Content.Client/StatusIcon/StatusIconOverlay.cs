@@ -60,8 +60,8 @@ public sealed class StatusIconOverlay : Overlay
                 continue;
 
             var worldMatrix = Matrix3.CreateTranslation(worldPos);
-            Matrix3.Multiply(scaleMatrix, worldMatrix, out var scaledWorld);
-            Matrix3.Multiply(rotationMatrix, scaledWorld, out var matty);
+            Matrix3.Multiply(worldMatrix, scaleMatrix, out var scaledWorld);
+            Matrix3.Multiply(scaledWorld, rotationMatrix, out var matty);
             handle.SetTransform(matty);
 
             var countL = 0;

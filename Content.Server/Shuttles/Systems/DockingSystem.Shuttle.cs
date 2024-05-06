@@ -73,7 +73,7 @@ public sealed partial class DockingSystem
 
        var stationDockMatrix = Matrix3.CreateInverseTransform(stationDockPos, shuttleDockAngle);
        var gridXformMatrix = Matrix3.CreateTransform(gridDockXform.LocalPosition, gridDockAngle);
-       Matrix3.Multiply(in stationDockMatrix, in gridXformMatrix, out matty);
+       Matrix3.Multiply(in gridXformMatrix, in stationDockMatrix, out matty);
 
        if (!ValidSpawn(grid, matty, offsetAngle, shuttleFixtures, isMap))
            return false;

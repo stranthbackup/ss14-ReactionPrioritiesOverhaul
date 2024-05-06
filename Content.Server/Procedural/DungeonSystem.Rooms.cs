@@ -76,7 +76,7 @@ public sealed partial class DungeonSystem
         }
 
         var roomTransform = Matrix3.CreateTransform((Vector2) room.Size / 2f, roomRotation);
-        Matrix3.Multiply(roomTransform, originTransform, out var finalTransform);
+        Matrix3.Multiply(originTransform, roomTransform, out var finalTransform);
 
         SpawnRoom(gridUid, grid, finalTransform, room, clearExisting);
     }

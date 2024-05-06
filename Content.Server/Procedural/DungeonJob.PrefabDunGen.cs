@@ -176,7 +176,7 @@ public sealed partial class DungeonJob
 
                     if (!roomProtos.TryGetValue(roomDimensions, out roomProto))
                     {
-                        Matrix3.Multiply(packTransform, dungeonTransform, out matty);
+                        Matrix3.Multiply(dungeonTransform, packTransform, out matty);
 
                         for (var x = roomSize.Left; x < roomSize.Right; x++)
                         {
@@ -211,8 +211,8 @@ public sealed partial class DungeonJob
 
                 var roomTransform = Matrix3.CreateTransform(roomSize.Center - packCenter, roomRotation);
 
-                Matrix3.Multiply(roomTransform, packTransform, out matty);
-                Matrix3.Multiply(matty, dungeonTransform, out var dungeonMatty);
+                Matrix3.Multiply(packTransform, roomTransform, out matty);
+                Matrix3.Multiply(dungeonTransform, matty, out var dungeonMatty);
 
                 // The expensive bit yippy.
                 _dungeon.SpawnRoom(gridUid, grid, dungeonMatty, room);

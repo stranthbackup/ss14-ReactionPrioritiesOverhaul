@@ -139,7 +139,7 @@ public sealed partial class ShuttleNavControl : BaseShuttleControl
         var offset = _coordinates.Value.Position;
         var posMatrix = Matrix3.CreateTransform(offset, _rotation.Value);
         var (_, ourEntRot, ourEntMatrix) = _transform.GetWorldPositionRotationMatrix(_coordinates.Value.EntityId);
-        Matrix3.Multiply(posMatrix, ourEntMatrix, out var ourWorldMatrix);
+        Matrix3.Multiply(ourEntMatrix, posMatrix, out var ourWorldMatrix);
         var ourWorldMatrixInvert = ourWorldMatrix.Invert();
 
         // Draw our grid in detail
@@ -148,7 +148,7 @@ public sealed partial class ShuttleNavControl : BaseShuttleControl
             fixturesQuery.HasComponent(ourGridId.Value))
         {
             var ourGridMatrix = _transform.GetWorldMatrix(ourGridId.Value);
-            Matrix3.Multiply(in ourGridMatrix, in ourWorldMatrixInvert, out var matrix);
+            Matrix3.Multiply(in ourWorldMatrixInvert, in ourGridMatrix, out var matrix);
             var color = _shuttles.GetIFFColor(ourGridId.Value, self: true);
 
             DrawGrid(handle, matrix, (ourGridId.Value, ourGrid), color);
@@ -194,7 +194,7 @@ public sealed partial class ShuttleNavControl : BaseShuttleControl
                 continue;
 
             var gridMatrix = _transform.GetWorldMatrix(gUid);
-            Matrix3.Multiply(in gridMatrix, in ourWorldMatrixInvert, out var matty);
+            Matrix3.Multiply(in ourWorldMatrixInvert, in gridMatrix, out var matty);
             var color = _shuttles.GetIFFColor(grid, self: false, iff);
 
             // Others default:

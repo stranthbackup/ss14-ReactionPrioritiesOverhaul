@@ -317,7 +317,7 @@ namespace Content.Client.Viewport
         public Matrix3 GetWorldToScreenMatrix()
         {
             EnsureViewportCreated();
-            return _viewport!.GetWorldToLocalMatrix() * GetLocalToScreenMatrix();
+            return GetLocalToScreenMatrix() * _viewport!.GetWorldToLocalMatrix();
         }
 
         public Matrix3 GetLocalToScreenMatrix()

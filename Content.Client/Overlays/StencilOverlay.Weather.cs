@@ -32,7 +32,7 @@ public sealed partial class StencilOverlay
             foreach (var grid in _grids)
             {
                 var matrix = _transform.GetWorldMatrix(grid, xformQuery);
-                Matrix3.Multiply(in matrix, in invMatrix, out var matty);
+                Matrix3.Multiply(in invMatrix, in matrix, out var matty);
                 worldHandle.SetTransform(matty);
 
                 foreach (var tile in grid.Comp.GetTilesIntersecting(worldAABB))
